@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="hospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cita">
+    <Key>
+      <PropertyRef Name="cod_cita" />
+    </Key>
+    <Property Name="cod_cita" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fecha" Type="DateTime" Precision="3" />
+    <Property Name="hora" Type="Time" Precision="7" />
+    <Property Name="id_paciente" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="id_medico" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="valor" Type="Int32" />
+    <Property Name="diagnostico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nom_acompanante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="activo" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="hospitalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cita" EntityType="Self.cita" />
+  </EntityContainer>
+</Schema>
